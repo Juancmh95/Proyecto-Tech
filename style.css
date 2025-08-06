@@ -1,0 +1,30 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+.voluntariado {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+form {
+    margin-top: 10px;
+}
+
+input, button {
+    display: block;
+    margin-top: 5px;
+    padding: 8px;
+    width: 100%;
+    max-width: 300px;
+}
+
+button {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}

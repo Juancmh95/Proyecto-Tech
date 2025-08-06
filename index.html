@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voluntariados</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Voluntariados disponibles</h1>
+    <p>Regístrate en el voluntariado que prefieras:</p>
+
+    <!-- Este div contiene el primer programa donde las personas se pueden inscribir -->
+    <div class="voluntariado">
+        <h2>Recolección de alimentos</h2>
+        <p><strong>Fecha:</strong> 10/08/2025</p>
+        <p><strong>Lugar:</strong> Parque del Poblado</p>
+        <form onsubmit="registrar(event, 'Recolección de alimentos')">
+            <input type="text" name="nombre" placeholder="Tu nombre" required>
+            <input type="email" name="email" placeholder="Tu correo" required>
+            <button type="submit">Registrarme</button>
+        </form>
+    </div>
+
+    <!-- Se replica exactamente el mismo codigo de arriba para los otros tres voluntariados -->
+    <div class="voluntariado">
+        <h2>Limpieza de la quebrada ayura</h2>
+        <p><strong>Fecha:</strong> 15/08/2025</p>
+        <p><strong>Lugar:</strong> Parque ecologico envigado</p>
+        <form onsubmit="registrar(event, 'Limpieza')">
+            <input type="text" name="nombre" placeholder="Tu nombre" required>
+            <input type="email" name="email" placeholder="Tu correo" required>
+            <button type="submit">Registrarme</button>
+        </form>
+    </div>
+
+    <!-- Voluntariado 3 -->
+    <div class="voluntariado">
+        <h2>Cocinando por Medellin</h2>
+        <p><strong>Fecha:</strong> 20/08/2025</p>
+        <p><strong>Lugar:</strong> Parque de las luces</p>
+        <form onsubmit="registrar(event, 'Cocinando')">
+            <input type="text" name="nombre" placeholder="Tu nombre" required>
+            <input type="email" name="email" placeholder="Tu correo" required>
+            <button type="submit">Registrarme</button>
+        </form>
+    </div>
+
+    <!-- Voluntariado 4 -->
+     <div class="voluntariado">
+        <h2>Jornada de adopción de mascotas</h2>
+        <p><strong>Fecha:</strong> 25/08/2025</p>
+        <p><strong>Lugar:</strong> La perla</p>
+        <form onsubmit="registrar(event, 'Jornada de adopción de mascotas')">
+            <input type="text" name="nombre" placeholder="Tu nombre" required>
+            <input type="email" name="email" placeholder="Tu correo" required>
+            <button type="submit">Registrarme</button>
+        </form>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
