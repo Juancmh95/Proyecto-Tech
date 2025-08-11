@@ -1,16 +1,44 @@
-/*Creamos una funcion para que se ejecute un formulario de inscripcion
-recibiendo dos datos "event y voluntario*/
-function registrar(event, voluntariado) {
-    event.preventDefault(); /* normalmente cuando se llena un formulario la pagina se recarga
-    no se si les ha pasado que intentan acceder a sura por ejemplo y se les tosta la pagina y la refrescan
-    les dice "desea reenviar el formulario". entonces con eso vamos a evitar que la pagina se nos recarge
-    */
+/**
+Función manejadora del submit de cada formulario de voluntariado.
+Esta evita que la página se recargue y Lee los datos del formulario (nombre y email).
+Incrementa el contador local (de la tarjeta) y el contador total.
+Limpia el formulario y muestra un aviso.
+ @param {SubmitEvent} e - evento de envío del formulario
+ @param {string} nombreEvento - nombre del voluntariado (solo para el mensaje)
+ */
+function registrar(e, nombreEvento) {
+  // 1) Evitar recarga de la página y asi perdamos nuestros conteos y registros
+  e.preventDefault();
 
-    const nombre = event.target.nombre.value; // el formulario que se va a enviar y lo almacenamos en la variable
-    const email = event.target.email.value; // lo mismo de arriba pero almacea es el correo
+  // 2) Toma el formulario que lanzó el submit
+  var form = e.target;
 
-    alert(`Gracias ${nombre}, te has registrado en "${voluntariado}" con el correo: ${email}`); // el mensaje que aparecera despues del registro exitoso
+  // 3) Lee valores (nombre y email)
+  var nombre = form.nombre.value;
+  var email  = form.email.value;
 
+  // 4) Busca el contenedor del voluntariado (div.voluntariado)
+  var tarjeta = form.parentElement; 
 
-    event.target.reset(); //deja limpios los campos despues del registro para que otra persona se pueda registar
+  // 5) Dentro de esa tarjeta, seleccionamos elcontador local
+  var spanLocal = tarjeta.querySelector('.count');
+
+  // 6) Tomamos el valor actual del contador local y sumamos  1 y reescribirmos
+  var actualLocal = parseInt(spanLocal.textContent, 10);
+  var nuevoLocal  = actualLocal + 1;
+  spanLocal.textContent = nuevoLocal; // actualizamos el contador visible
+
+  // 7) Actualizamos el contador total (span con id="totalCount")
+  var spanTotal  = document.getElementById('totalCount');
+  var actualTotal = parseInt(spanTotal.textContent, 10);
+  var nuevoTotal  = actualTotal + 1;
+  spanTotal.textContent = nuevoTotal; // actualizamos el contador visible
+
+  // 8) Limpiar el formulario para que quede listo para otro registro
+  form.reset();
+
+  // 9) Aviso de confirmación simple (opcional)
+  alert('¡Gracias por registrarte en "' + nombreEvento + '", ' + nombre + ' (' + email + ')!');
+
 }
+
