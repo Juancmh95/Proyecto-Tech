@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bienvenido | Voluntariados</title>
+  <link rel="stylesheet" href="intro.css" />
+</head>
+<body>
+  <!-- Hero / portada -->
+  <header class="hero">
+    <h1>¡Bienvenido a Voluntariados!</h1>
+    <p>Únete, ayuda y suma impacto.</p>
+  </header>
+
+  <!-- Tarjetas de métricas -->
+  <section class="metrics">
+    <div class="card">
+      <h2>Total inscritos</h2>
+      <!-- Se rellena con el valor de ?reg= -->
+      <div id="regCount" class="value">0</div>
+    </div>
+
+    <div class="card">
+      <h2>Visitas a esta página</h2>
+      <!-- Aumenta 1 cada vez que se abre intro.html -->
+      <div id="visitCount" class="value">0</div>
+    </div>
+  </section>
+
+  <!-- Botón para ir al sitio principal -->
+  <div class="actions">
+    <a id="goSite" class="btn" href="index.html">Entrar al sitio</a>
+  </div>
+
+  <footer class="foot">
+    <small>No captan datos reales por que no cuenta con almacenamiento</small>
+  </footer>
+
+  <script src="intro.js"></script>
+</body>
+</html>

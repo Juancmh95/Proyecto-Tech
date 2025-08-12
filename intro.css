@@ -1,0 +1,101 @@
+/* Variables de color globales*/
+:root{
+  --bg:#0f172a;        
+  --panel:#111827;     
+  --muted:#94a3b8;     
+  --brand:#22c55e;     
+  --white:#ffffff;     
+}
+
+/* Reset de box-sizing*/
+*{
+  box-sizing:border-box; /* Incluye padding y borde dentro del ancho/alto total */
+}
+
+/* Estilos del body*/
+body{
+  margin:0; /* Quita márgenes por defecto del navegador */
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; /* Fuente moderna y segura */
+  /* Fondo  */
+  background: radial-gradient(1200px 600px at 10% -20%, #1f2937, transparent),
+              radial-gradient(900px 500px at 110% 20%, #1e293b, transparent),
+              var(--bg);
+  color: var(--white); /* Texto blanco por defecto */
+}
+
+/* Sección de bienvenida */
+.hero{
+  padding: 56px 20px 24px; /* Espaciado interno arriba, lados y abajo */
+  text-align: center;      /* Centrar texto */
+}
+.hero h1{
+  margin:0 0 8px; /* Quita margen arriba y añade pequeño margen abajo */
+  font-size: clamp(28px, 5vw, 44px); /* Tamaño adaptable: mínimo 28px, máximo 44px */
+  letter-spacing: .5px; /* Espacio extra entre letras */
+}
+.hero p{
+  margin:0; /* Quita márgenes */
+  color: var(--muted); /* Texto gris claro */
+}
+
+/* Contenedor de métricas*/
+.metrics{
+  max-width: 980px; /* Ancho máximo */
+  margin: 24px auto; /* Centrado horizontal y separación vertical */
+  display: grid; /* Usar grid layout */
+  gap: 16px; /* Espacio entre columnas y filas */
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* Columnas adaptables */
+  padding: 0 16px; /* Espaciado lateral */
+}
+
+/* Tarjeta individual*/
+.card{
+  background: linear-gradient(180deg, #0b1220, #0a1020); /* Fondo degradado vertical oscuro */
+  border: 1px solid #1f2a44; /* Borde fino */
+  border-radius: 16px; /* Bordes redondeados */
+  padding: 22px; /* Espaciado interno */
+  box-shadow: 0 10px 25px rgba(0,0,0,.25); /* Sombra para profundidad */
+}
+.card h2{
+  margin:0 0 8px; /* Sin margen arriba, pequeño margen abajo */
+  font-size: 18px; /* Tamaño de fuente del título */
+  color: var(--muted); /* Gris claro */
+  font-weight: 500; /* Peso medio */
+}
+.value{
+  font-size: clamp(34px, 6vw, 56px); /* Tamaño adaptable del número */
+  font-weight: 800; /* Muy grueso */
+  line-height: 1.1; /* Altura de línea ajustada */
+  color: var(--brand); /* Verde de marca */
+  text-shadow: 0 4px 18px rgba(34,197,94,.25); /* Sombra para brillo */
+}
+
+/* Sección de botones de acción*/
+.actions{
+  text-align:center; /* Centrar contenido */
+  margin: 20px 0 36px; /* Separación arriba y abajo */
+}
+.btn{
+  display:inline-block; /* Permite padding y ancho/alto */
+  background: var(--brand); /* Fondo verde de marca */
+  color: #0a0f1f; /* Texto oscuro */
+  padding: 12px 20px; /* Espaciado interno */
+  border-radius: 12px; /* Bordes redondeados */
+  text-decoration: none; /* Sin subrayado */
+  font-weight: 700; /* Texto en negrita */
+  transition: transform .08s ease, box-shadow .2s ease; /* Transición suave */
+  box-shadow: 0 10px 20px rgba(34,197,94,.25); /* Sombra verde suave */
+}
+.btn:hover{
+  transform: translateY(-1px); /* Efecto hover */
+}
+.btn:active{
+  transform: translateY(0); /* Vuelve a su posición al hacer click */
+}
+
+/* Pie de página*/
+.foot{
+  text-align:center; /* Centrar texto */
+  color: var(--muted); /* Texto gris claro */
+  padding: 8px 16px 24px; /* Espaciado interno */
+}

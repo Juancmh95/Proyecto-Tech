@@ -42,3 +42,16 @@ function registrar(e, nombreEvento) {
 
 }
 
+// Lee el total visible en #totalCount y abre intro.html 
+function irAIntro(){
+  var el = document.getElementById('totalCount');
+  var total = 0;
+  if (el) {
+    total = parseInt(el.textContent, 10);
+    if (isNaN(total)) total = 0;
+  }
+  // Vamos a la intro con el total de inscritos; visitas empiezan en 0
+  location.href = 'intro.html?reg=' + String(total) + '&vis=0';
+}
+
+
