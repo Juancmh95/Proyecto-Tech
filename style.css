@@ -11,6 +11,7 @@ body {
   background-color: #0e1628;
   color: #ffffff;
   padding: 20px;
+  padding-bottom: 90px;
 }
 
 
@@ -320,4 +321,18 @@ h2 {
   height: 1px; width: 1px;
   overflow: hidden; clip: rect(1px, 1px, 1px, 1px);
   white-space: nowrap;
+}
+
+.footer {
+  margin-top: 50px;
+  padding-bottom: 40px;
+  background: #00ff88;
+  color: #0a0f1f;
+  font-weight: 700;
+  font-size: 0.75rem;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 70px; 
 }
