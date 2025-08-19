@@ -17,15 +17,30 @@ body {
   color: var(--white);
 }
 
+/* Contenedor de las tarjetas */
+.grid-voluntariados {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); /* 2–4 por fila según ancho */
+  gap: 64px;
+  justify-items: stretch;   /* cada tarjeta ocupa su celda */
+  align-items: start;
+}
+
 /* Caja de cada voluntariado */
 .voluntariado {
   background: var(--panel);
   border: 1px solid #1f2a44;
   padding: 15px;
-  margin-bottom: 15px;
   border-radius: 12px;
   box-shadow: 0 6px 16px rgba(0, 0, 0, .25);
+
+  /*  Importante: que sea del ancho de la celda */
+  width: 100%;
+  max-width: none;      /* quitar límite anterior */
+  margin: 0;            /* quitar centrado con margin-inline:auto y margin-bottom extra */
 }
+
+
 
 /* Separación del form dentro de la tarjeta */
 form {
