@@ -1,51 +1,38 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <!-- Metadatos -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Metadatos -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Título de la pestaña -->
-    <title>Voluntariados</title>
+  <!-- Iconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Título -->
+  <title>Voluntariados</title>
 
     <!-- Css-->
     <link rel="stylesheet" href="style.css">
-    <!--iconos-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
 </head>
 <body>
 
-    <!-- Botón para ver la intro -->
-    <p style="text-align:right; margin:10px 0;">
-        <a class="btn-intro" href="#" onclick="irAIntro(); return false;">Ver página de introducción</a>
-    </p>
-
-
-    <!-- Título de la página -->
+  <!-- Encabezado -->
+  <div class="encabezado">
+    <a class="btn-intro" href="#" onclick="irAIntro(); return false;">Ver página de introducción</a>
     <h1>Voluntariados disponibles</h1>
+  </div>
 
-    <p>Regístrate en el voluntariado que prefieras:</p>
-
-    <!--
-      Contador global MUY BÁSICO:
-       Solo muestra un número.
-       Se incrementa desde JS al registrar cualquier persona como no usamos ni base de datos ni json... al refrecar se pierde 
-      el recuado.
-      
-    -->
-    <p><strong>Total registrados:</strong> <span id="totalCount">0</span></p>
+  <!-- Contador total -->
+  <p><strong>Total registrados:</strong> <span id="totalCount">0</span></p>
 
     <!--
       Voluntariado 1:
       Creamos un formulario con onsubmit con event que permite realizar el registro.
       Ademas añadimos un contador en la ultima linea para llevar registro de cantidad de personas
     -->
-  <div class="grid-voluntariados">
     <div class="voluntariado">
         <h2>Recolección de alimentos</h2>
-        <i class="fa-solid fa-apple-whole"></i>
-        <p><strong>Fecha:</strong> 20/08/2025</p>
+        <p><strong>Fecha:</strong> 10/08/2025</p>
         <p><strong>Lugar:</strong> Parque del Poblado</p>
 
         <!-- Formulario donde requqrimos nombre y correo para registro -->
@@ -61,9 +48,8 @@
 
     <!-- Voluntariado 2 (replicamos el mismo codigo de arriba por todos los voluntariado)-->
     <div class="voluntariado">
-        <h2>Limpieza de la quebrada ayurá</h2>
-        <i class="fa-solid fa-leaf"></i>
-        <p><strong>Fecha:</strong> 25/08/2025</p>
+        <h2>Limpieza de la quebrada ayura</h2>
+        <p><strong>Fecha:</strong> 15/08/2025</p>
         <p><strong>Lugar:</strong> Parque ecologico envigado</p>
 
         <form onsubmit="registrar(event, 'Limpieza')">
@@ -74,28 +60,35 @@
 
         <p><strong>Registrados aquí:</strong> <span class="count">0</span></p>
     </div>
+  </section>
 
     <!-- Voluntariado 3 -->
     <div class="voluntariado">
         <h2>Cocinando por Medellin</h2>
-        <i class="fa-solid fa-bowl-food"></i>
-        <p><strong>Fecha:</strong> 29/08/2025</p>
+        <p><strong>Fecha:</strong> 20/08/2025</p>
         <p><strong>Lugar:</strong> Parque de las luces</p>
 
-        <form onsubmit="registrar(event, 'Cocinando')">
-            <input type="text" name="nombre" placeholder="Tu nombre" required>
-            <input type="email" name="email" placeholder="Tu correo" required>
-            <button type="submit">Registrarme</button>
-        </form>
+    <form id="formRegistro" onsubmit="registrar(event)">
+      <label for="selectorEvento" class="sr-only">Selecciona un evento</label>
+      <select id="selectorEvento" aria-label="Selecciona un evento">
+        <option value="recoleccion">Recolección de alimentos</option>
+        <option value="limpieza">Limpieza de la quebrada Ayurá</option>
+        <option value="cocinando">Cocinando por Medellín</option>
+        <option value="adopcion">Jornada de adopción de mascotas</option>
+      </select>
 
-        <p><strong>Registrados aquí:</strong> <span class="count">0</span></p>
-    </div>
+      <input type="text" name="nombre" placeholder="Tu nombre" required>
+      <input type="email" name="email" placeholder="Tu correo" required>
+      <button type="submit">Registrarme</button>
+    </form>
+
+    <p><strong>Registrados aquí:</strong> <span class="count" id="eventoCount">0</span></p>
+  </div>
 
     <!-- Voluntariado 4 -->
     <div class="voluntariado">
         <h2>Jornada de adopción de mascotas</h2>
-        <i class="fa-solid fa-paw"></i>
-        <p><strong>Fecha:</strong> /08/2025</p>
+        <p><strong>Fecha:</strong> 25/08/2025</p>
         <p><strong>Lugar:</strong> La perla</p>
 
         <form onsubmit="registrar(event, 'Jornada de adopción de mascotas')">
@@ -109,7 +102,7 @@
     <p style="text-align:center; margin:24px 0;">
         <a class="btn-intro" href="#" onclick="irAIntro(); return false;">Regresar a la intro</a>
     </p>
-  </div>
+
     <!-- Buena practica cargar el js al final -->
     <script src="index.js"></script>
 </body>
