@@ -13,6 +13,9 @@
 
     <!-- Css-->
     <link rel="stylesheet" href="style.css">
+    <!--iconos-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 </head>
 <body>
 
@@ -30,8 +33,13 @@
       Creamos un formulario con onsubmit con event que permite realizar el registro.
       Ademas añadimos un contador en la ultima linea para llevar registro de cantidad de personas
     -->
+  <div class="grid-voluntariados">
+  
+
+
     <div class="voluntariado">
         <h2>Recolección de alimentos</h2>
+        <i class="fa-solid fa-apple-whole"></i>
         <p><strong>Fecha:</strong> 10/08/2025</p>
         <p><strong>Lugar:</strong> Parque del Poblado</p>
 
@@ -48,7 +56,8 @@
 
     <!-- Voluntariado 2 (replicamos el mismo codigo de arriba por todos los voluntariado)-->
     <div class="voluntariado">
-        <h2>Limpieza de la quebrada ayura</h2>
+        <h2>Limpieza de la quebrada Ayurá</h2>
+        <i class="fa-solid fa-leaf"></i>
         <p><strong>Fecha:</strong> 15/08/2025</p>
         <p><strong>Lugar:</strong> Parque ecologico envigado</p>
 
@@ -65,6 +74,7 @@
     <!-- Voluntariado 3 -->
     <div class="voluntariado">
         <h2>Cocinando por Medellin</h2>
+        <i class="fa-solid fa-bowl-food"></i>
         <p><strong>Fecha:</strong> 20/08/2025</p>
         <p><strong>Lugar:</strong> Parque de las luces</p>
 
@@ -88,6 +98,7 @@
     <!-- Voluntariado 4 -->
     <div class="voluntariado">
         <h2>Jornada de adopción de mascotas</h2>
+        <i class="fa-solid fa-paw"></i>
         <p><strong>Fecha:</strong> 25/08/2025</p>
         <p><strong>Lugar:</strong> La perla</p>
 
@@ -99,6 +110,7 @@
 
         <p><strong>Registrados aquí:</strong> <span class="count">0</span></p>
     </div>
+  </div>
     <p style="text-align:center; margin:24px 0;">
         <a class="btn-intro" href="#" onclick="irAIntro(); return false;">Regresar a la intro</a>
     </p>
