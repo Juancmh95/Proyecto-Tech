@@ -69,7 +69,7 @@
 
         <p><strong>Registrados aquí:</strong> <span class="count">0</span></p>
     </div>
-  </section>
+  
 
     <!-- Voluntariado 3 -->
     <div class="voluntariado">
@@ -78,19 +78,11 @@
         <p><strong>Fecha:</strong> 20/08/2025</p>
         <p><strong>Lugar:</strong> Parque de las luces</p>
 
-    <form id="formRegistro" onsubmit="registrar(event)">
-      <label for="selectorEvento" class="sr-only">Selecciona un evento</label>
-      <select id="selectorEvento" aria-label="Selecciona un evento">
-        <option value="recoleccion">Recolección de alimentos</option>
-        <option value="limpieza">Limpieza de la quebrada Ayurá</option>
-        <option value="cocinando">Cocinando por Medellín</option>
-        <option value="adopcion">Jornada de adopción de mascotas</option>
-      </select>
-
-      <input type="text" name="nombre" placeholder="Tu nombre" required>
-      <input type="email" name="email" placeholder="Tu correo" required>
-      <button type="submit">Registrarme</button>
-    </form>
+        <form onsubmit="registrar(event, 'Limpieza')">
+            <input type="text" name="nombre" placeholder="Tu nombre" required>
+            <input type="email" name="email" placeholder="Tu correo" required>
+            <button type="submit">Registrarme</button>
+        </form>
 
     <p><strong>Registrados aquí:</strong> <span class="count" id="eventoCount">0</span></p>
   </div>
